@@ -97,7 +97,7 @@ if [ -f $CACHE_DIR/depends_done.$SCRIPT_VER ]; then
     untar cedar14-libmongoc.tar
     untar cedar14-uuid-dev.tar
     # untar_rt ubuntu14-libmongoc-rt.tar
-    untar_rt ubuntu14-uuid-rt.tar
+    # untar_rt ubuntu14-uuid-rt.tar
     # touch $CACHE_DIR/depends_done.$SCRIPT_VER
   fi
 say Ok
