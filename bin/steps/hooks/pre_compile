@@ -6,5 +6,11 @@ if [ -f bin/pre_compile ]; then
   chmod +x bin/pre_compile
   ./bin/pre_compile
 else
-	echo "-----> No pre-compile hooks found"
+	echo "-----> No pre-compile hooks found. Will force installation"
+
+	echo "-----> Installign uuid-dev"
+	apt-get install uuid-dev
+
+	echo "-----> Installing libmongoc-dev"
+	apt-get install libmongoc-dev
 fi
