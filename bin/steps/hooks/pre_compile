@@ -84,8 +84,6 @@ if [ -f $CACHE_DIR/depends_done.$SCRIPT_VER ]; then
     fetch cedar14-uuid-dev.tar.gz
     fetch ubuntu14-libmongoc-rt.tar.gz
     fetch ubuntu14-uuid-rt.tar.gz
-    URL=https://swift.org/builds/swift-2.2-release/ubuntu1404/swift-2.2-RELEASE
-    fetch swift-2.2-RELEASE-ubuntu14.04.tar.gz
     say Ok
 
     step Decompressing dependencies
@@ -96,9 +94,6 @@ if [ -f $CACHE_DIR/depends_done.$SCRIPT_VER ]; then
     say Ok
 
     step Extracting dependencies
-    untar swift-2.2-RELEASE-ubuntu14.04.tar
-    rsync -Pa $CACHE_DIR/swift-2.2-RELEASE-ubuntu14.04/ $CACHE_DIR/.delta/ > $BUILD_DIR/build.log || fail Renaming Swift dir
-    rm -rf $CACHE_DIR/swift-2.2-RELEASE-ubuntu14.04
     untar cedar14-libmongoc.tar
     untar cedar14-uuid-dev.tar
     untar_rt ubuntu14-libmongoc-rt.tar
