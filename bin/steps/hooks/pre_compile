@@ -18,6 +18,23 @@ fi
 # apt-get $APT_OPTIONS update
 # apt-get $APT_OPTIONS -y --force-yes -d install --reinstall mongodb uuid-dev
 
+function say() {
+    echo $* | sed -u 's/^/       /'
+  }
+
+function step() {
+    echo -----\> $*
+  }
+
+function untar() {
+    tar -C $CACHE_DIR -xf $CACHE_DIR/$1 || fail Extracting $1
+    rm -f $CACHE_DIR/$1
+  }
+
+function untar_rt() {
+    tar -C $CACHE_DIR/runtime -xf $CACHE_DIR/$1 || fail Extracting $1
+    rm -f $CACHE_DIR/$1
+  }
 
 step Checking dependencies
 if [ -f $CACHE_DIR/depends_done.$SCRIPT_VER ]; then
