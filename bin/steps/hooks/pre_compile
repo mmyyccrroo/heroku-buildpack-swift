@@ -18,7 +18,7 @@ fi
 # apt-get $APT_OPTIONS update
 # apt-get $APT_OPTIONS -y --force-yes -d install --reinstall mongodb uuid-dev
 
-ffunction decomp() {
+function decomp() {
     gunzip -f $CACHE_DIR/$1 || fail Decompressing $1
   }
 
@@ -72,7 +72,6 @@ function untar_rt() {
   }
 
 pushd .
-
 
 step Checking dependencies
 if [ -f $CACHE_DIR/depends_done.$SCRIPT_VER ]; then
